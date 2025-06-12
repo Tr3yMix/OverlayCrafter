@@ -27,9 +27,9 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 
 include(ExternalProject)
 ExternalProject_Add(vorbis-populate
-                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/xiph/vorbis.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "v1.3.7" "GIT_SHALLOW" "ON" "PATCH_COMMAND" "C:/Users/treyh/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe" "-DVORBIS_DIR=D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-src" "-P" "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-src/tools/vorbis/PatchVorbis.cmake"
-                    SOURCE_DIR          "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-src"
-                    BINARY_DIR          "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-build"
+                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/xiph/vorbis.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "v1.3.7" "GIT_SHALLOW" "ON" "PATCH_COMMAND" "C:/Users/treyh/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe" "-DVORBIS_DIR=D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-src" "-P" "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-src/tools/vorbis/PatchVorbis.cmake"
+                    SOURCE_DIR          "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-src"
+                    BINARY_DIR          "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

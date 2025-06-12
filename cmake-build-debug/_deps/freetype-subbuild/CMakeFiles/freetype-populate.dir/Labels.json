@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/CMakeFiles/freetype-populate"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/CMakeFiles/freetype-populate"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/CMakeFiles/freetype-populate.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/CMakeFiles/freetype-populate.rule"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/CMakeFiles/freetype-populate-complete.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/CMakeFiles/freetype-populate-complete.rule"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-build.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-build.rule"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-configure.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-configure.rule"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-download.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-download.rule"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-install.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-install.rule"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-mkdir.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-mkdir.rule"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-patch.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-patch.rule"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-test.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-test.rule"
 		},
 		{
-			"file" : "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-update.rule"
+			"file" : "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-update.rule"
 		}
 	],
 	"target" : 

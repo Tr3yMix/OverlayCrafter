@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-src"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-build"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/tmp"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-src"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-build"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/tmp"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

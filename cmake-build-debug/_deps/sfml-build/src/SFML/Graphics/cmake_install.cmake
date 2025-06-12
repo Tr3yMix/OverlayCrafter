@@ -1,4 +1,4 @@
-# Install script for directory: D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-src/src/SFML/Graphics
+# Install script for directory: D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-src/src/SFML/Graphics
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,15 +38,15 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-build/lib/libsfml-graphics-s-d.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-build/lib/libsfml-graphics-s-d.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML" TYPE FILE FILES "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-build/src/SFML/Graphics/SFMLGraphicsDependencies.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML" TYPE FILE FILES "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-build/src/SFML/Graphics/SFMLGraphicsDependencies.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-build/cmake_install.cmake")
+  include("D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-build/cmake_install.cmake")
 endif()
 

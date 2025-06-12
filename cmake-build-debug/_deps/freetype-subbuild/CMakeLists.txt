@@ -27,9 +27,9 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 
 include(ExternalProject)
 ExternalProject_Add(freetype-populate
-                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/freetype/freetype.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "VER-2-13-2" "GIT_SHALLOW" "ON" "PATCH_COMMAND" "C:/Users/treyh/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe" "-DFREETYPE_DIR=D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-src" "-P" "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-src/tools/freetype/PatchFreetype.cmake"
-                    SOURCE_DIR          "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-src"
-                    BINARY_DIR          "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/freetype-build"
+                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/freetype/freetype.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "VER-2-13-2" "GIT_SHALLOW" "ON" "PATCH_COMMAND" "C:/Users/treyh/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe" "-DFREETYPE_DIR=D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-src" "-P" "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-src/tools/freetype/PatchFreetype.cmake"
+                    SOURCE_DIR          "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-src"
+                    BINARY_DIR          "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/freetype-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

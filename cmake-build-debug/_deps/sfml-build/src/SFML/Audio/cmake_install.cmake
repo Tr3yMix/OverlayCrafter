@@ -1,4 +1,4 @@
-# Install script for directory: D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-src/src/SFML/Audio
+# Install script for directory: D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-src/src/SFML/Audio
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,24 +39,24 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/ogg-build/cmake_install.cmake")
+  include("D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/ogg-build/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/flac-build/cmake_install.cmake")
+  include("D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/flac-build/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-build/cmake_install.cmake")
+  include("D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-build/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-build/lib/libsfml-audio-s-d.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-build/lib/libsfml-audio-s-d.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML" TYPE FILE FILES "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-build/src/SFML/Audio/SFMLAudioDependencies.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML" TYPE FILE FILES "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-build/src/SFML/Audio/SFMLAudioDependencies.cmake")
 endif()
 

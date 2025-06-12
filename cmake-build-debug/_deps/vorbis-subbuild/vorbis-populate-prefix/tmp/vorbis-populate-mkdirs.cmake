@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-src"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-build"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src"
-  "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-src"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-build"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src"
+  "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

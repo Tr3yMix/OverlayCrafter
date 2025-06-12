@@ -1,3 +1,3 @@
-D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/ogg-subbuild/CMakeFiles/ogg-populate.dir
-D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/ogg-subbuild/CMakeFiles/edit_cache.dir
-D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/ogg-subbuild/CMakeFiles/rebuild_cache.dir
+D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/ogg-subbuild/CMakeFiles/ogg-populate.dir
+D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/ogg-subbuild/CMakeFiles/edit_cache.dir
+D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/ogg-subbuild/CMakeFiles/rebuild_cache.dir

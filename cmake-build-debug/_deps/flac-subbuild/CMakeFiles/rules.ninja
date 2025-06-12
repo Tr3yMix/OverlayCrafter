@@ -23,7 +23,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\treyh\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SD:\SoftwareProjects\GameEngine\OverlayCrafter\cmake-build-debug\_deps\flac-subbuild -BD:\SoftwareProjects\GameEngine\OverlayCrafter\cmake-build-debug\_deps\flac-subbuild
+  command = C:\Users\treyh\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SD:\SoftwareProjects\ModpackDev\OverlayCrafter\cmake-build-debug\_deps\flac-subbuild -BD:\SoftwareProjects\ModpackDev\OverlayCrafter\cmake-build-debug\_deps\flac-subbuild
   description = Re-running CMake...
   generator = 1
 

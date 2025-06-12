@@ -1,4 +1,4 @@
-# Install script for directory: D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-src
+# Install script for directory: D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/vorbis-build/lib/cmake_install.cmake")
+  include("D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/vorbis-build/lib/cmake_install.cmake")
 
 endif()
 

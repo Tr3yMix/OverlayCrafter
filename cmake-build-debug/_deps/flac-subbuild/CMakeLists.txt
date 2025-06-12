@@ -27,9 +27,9 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 
 include(ExternalProject)
 ExternalProject_Add(flac-populate
-                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/xiph/flac.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "1.4.3" "GIT_SHALLOW" "ON" "PATCH_COMMAND" "C:/Users/treyh/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe" "-DFLAC_DIR=D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/flac-src" "-P" "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/sfml-src/tools/flac/PatchFLAC.cmake"
-                    SOURCE_DIR          "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/flac-src"
-                    BINARY_DIR          "D:/SoftwareProjects/GameEngine/OverlayCrafter/cmake-build-debug/_deps/flac-build"
+                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/xiph/flac.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "1.4.3" "GIT_SHALLOW" "ON" "PATCH_COMMAND" "C:/Users/treyh/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe" "-DFLAC_DIR=D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/flac-src" "-P" "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/sfml-src/tools/flac/PatchFLAC.cmake"
+                    SOURCE_DIR          "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/flac-src"
+                    BINARY_DIR          "D:/SoftwareProjects/ModpackDev/OverlayCrafter/cmake-build-debug/_deps/flac-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""
