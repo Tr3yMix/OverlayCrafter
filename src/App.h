@@ -5,7 +5,7 @@
 
 #include "SFML/Graphics.hpp"
 #include <iostream>
-#include <string>
+
 
 #include "Button.h"
 #include "ColorScheme.h"
@@ -34,7 +34,6 @@ private:
     sf::Color backgroundColor;
 
     std::unique_ptr<Button> button;
-
 
     std::unique_ptr<sf::View> view;
     sf::Texture imageTexture;
