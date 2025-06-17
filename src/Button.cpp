@@ -1,8 +1,6 @@
 
 #include "Button.h"
 
-#include <iostream>
-
 
 Button::Button(const sf::Vector2f& position, const sf::Vector2f& scale,
                const sf::Font& font, const std::string& text, const sf::Color color, const std::function<void()> onClick)
@@ -11,10 +9,11 @@ Button::Button(const sf::Vector2f& position, const sf::Vector2f& scale,
     this->position = position;
     this->scale = scale;
     this->font = font;
+    this->color = color;
 
     shape.setPosition(this->position);
     shape.setSize(this->scale);
-    shape.setFillColor(color);
+    shape.setFillColor(this->color);
 
     label = std::make_unique<sf::Text>(this->font, text);
 
@@ -31,17 +30,34 @@ void Button::draw(sf::RenderWindow& window) const {
     window.draw(*label);
 }
 
-void Button::handleEvent(const std::optional<sf::Event>& event, const sf::RenderWindow& window) const {
-    if(const auto* mouseButtonPressed = event->getIf<sf::Event::MouseButtonPressed>()) {
-        if(mouseButtonPressed->button == sf::Mouse::Button::Left) {
-            const sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+bool Button::isHovering(const sf::RenderWindow& window) const {
 
-            if(const sf::Vector2f mousePosF(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y)); shape.getGlobalBounds().contains(mousePosF)) {
+    const sf::Vector2f mousePosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+    return shape.getGlobalBounds().contains(mousePosition);
+
+}
+
+
+void Button::handleEvent(const std::optional<sf::Event>& event, const sf::RenderWindow& window){
+
+    if(isHovering(window)) {
+
+        shape.setFillColor(sf::Color::Green);
+
+        if(const auto* mouseButtonPressed = event->getIf<sf::Event::MouseButtonPressed>()) {
+            if(mouseButtonPressed->button == sf::Mouse::Button::Left) {
                 if(clickCallback) {
                     clickCallback();
                 }
             }
         }
     }
+    else {
+        shape.setFillColor(this->color);
+
+    }
 
 }
+
+

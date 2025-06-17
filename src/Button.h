@@ -12,7 +12,7 @@ public:
         const std::string& text, sf::Color color, std::function<void()> onClick);
 
     void draw(sf::RenderWindow& window) const;
-    void handleEvent(const std::optional<sf::Event>& event, const sf::RenderWindow& window) const;
+    void handleEvent(const std::optional<sf::Event>& event, const sf::RenderWindow& window);
 
 private:
 
@@ -21,8 +21,11 @@ private:
     sf::Vector2f position;
     sf::Vector2f scale;
     sf::Font font;
+    sf::Color color;
 
     std::function<void()> clickCallback;
+
+    bool isHovering(const sf::RenderWindow& window) const;
 
 };
 

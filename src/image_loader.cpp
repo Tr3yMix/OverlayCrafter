@@ -1,27 +1,24 @@
 
 #include "image_loader.h"
-#include "libs/tinyfiledialogs.h"
 
+#include <nfd.h>
 #include <iostream>
 
 
 void loadImage(sf::Texture &texture) {
-    const char* filters[] = { "*.png", "*.jpg", "*.jpeg", "*.bmp" };
-    const char* filePath = tinyfd_openFileDialog(
-        "Open Texture",
-        "",
-        4,
-        filters,
-        "Image Files",
-        0
-        );
 
-    if(filePath) {
-        if(!texture.loadFromFile(filePath)) {
-            std::cerr << "Failed to load image from: " << filePath << std::endl;
+    nfdchar_t* outPath = nullptr;
+
+    const auto filterList = "png,jpg,jpeg,bmp";
+
+    if(const nfdresult_t result = NFD_OpenDialog(filterList, nullptr, &outPath); result == NFD_OKAY) {
+        if(!texture.loadFromFile(outPath)) {
+            std::cerr << "Failed to load image from:"<< outPath << std::endl;
         }
+        free(outPath);
     }
-    else {
-        std::cerr << "File path failed to load" << std::endl;
+    else if (result == NFD_ERROR){
+        std::cerr << "NFD error: "<< NFD_GetError << std::endl;
     }
+
 }

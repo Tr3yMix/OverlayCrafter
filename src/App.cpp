@@ -2,53 +2,47 @@
 
 #include "image_loader.h"
 #include "App.h"
-
 #include "Button.h"
+#include "ResourceManager.h"
+#include "WhiteTexture.h"
 
 App::App(const std::string& title, const sf::Vector2<float> windowDimensions, const sf::Vector2<float> spriteScale,
-         const ColorScheme colorScheme){
-
-    this->title = title;
-    this->windowDimensions = windowDimensions;
-    this->spriteScale = spriteScale;
-    this->backgroundColor = colorScheme.backgroundColor;
+         const ColorScheme colorScheme) : title(title), windowDimensions(windowDimensions), spriteScale(spriteScale),
+        backgroundColor(colorScheme.backgroundColor), imageTexture(WhiteTexture()){
 
     window.create(sf::VideoMode(static_cast<sf::Vector2u>(windowDimensions)), title,
                   sf::Style::Default, sf::State::Windowed);
 
     view = std::make_unique<sf::View>(sf::FloatRect({0, 0}, windowDimensions));
 
-    sf::Font font;
-    if(!font.openFromFile("../../src/libs/arial.ttf")) {
+    if(!font.openFromFile(ResourceManager::resourcePath / "font" / "arial.ttf")) {
         std::cerr << "Failed to load font." << std::endl;
         return;
     }
 
-
-    if(!imageTexture.loadFromFile("../../img/birch_log.png")) {
-        std::cerr << "Failed to load image." << std::endl;
-    }
-
-
     sf::Vector2f position = {20, 50};
     sf::Vector2f scale = {300, 50};
 
-    button = std::make_unique<Button>(position, scale, font, "openFile", colorScheme.buttonColor,[this] { loadImage(imageTexture);});
+    button = std::make_unique<Button>(position, scale, font, "Open File", colorScheme.buttonColor,[this] {
+        loadImage(imageTexture);
+        sprite->setTexture(imageTexture, true);
+        centerSprite();
+    });
 
     sprite = std::make_unique<sf::Sprite>(imageTexture);
 
-    sprite->setScale(spriteScale);
+    sprite->setScale(this->spriteScale);
 
     centerSprite();
 
 
 }
 
-App::App(): App("app", sf::Vector2f(800, 600), sf::Vector2f(16, 16), ColorScheme()){
+App::App(): App("app", sf::Vector2f(800, 600), sf::Vector2f(16, 16), ColorScheme::Light()){
 
 }
 
-void App::setViewport(const sf::Event::Resized event) {
+void App::setViewport(const sf::Event::Resized& event) {
     const float windowAspect = static_cast<float>(event.size.x) / static_cast<float>(event.size.y);
     const float viewAspect = view->getSize().x / view->getSize().y;
 
@@ -83,8 +77,6 @@ void App::update() {
 
     window.draw(*sprite);
 
-
-
     window.display();
 }
 
@@ -101,6 +93,8 @@ void App::centerSprite() const {
 void App::handleEvents() {
 
     while(const std::optional<sf::Event> event = window.pollEvent()) {
+
+
         if(event->is<sf::Event::Closed>()) {
             window.close();
         }

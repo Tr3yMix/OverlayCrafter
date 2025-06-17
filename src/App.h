@@ -1,3 +1,4 @@
+#pragma once
 
 #ifndef APP_H
 #define APP_H
@@ -37,14 +38,14 @@ private:
 
     std::unique_ptr<sf::View> view;
     sf::Texture imageTexture;
-    //sf::Sprite *sprite{};
+    sf::Font font;
     std::unique_ptr<sf::Sprite> sprite;
 
     //Functions
     void centerSprite() const;
 
     void handleEvents();
-    void setViewport(sf::Event::Resized event);
+    void setViewport(const sf::Event::Resized& event);
 
 };
 

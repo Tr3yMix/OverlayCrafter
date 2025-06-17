@@ -7,12 +7,15 @@
 class ColorScheme {
 
 public:
-    ColorScheme(sf::Color backgroundColor, sf::Color foregroundColor, sf::Color buttonColor);
-    ColorScheme();
+    ColorScheme(sf::Color backgroundColor, sf::Color foregroundColor, sf::Color buttonColor, sf::Color textColor);
+
+    static ColorScheme Dark();
+    static ColorScheme Light();
 
     sf::Color backgroundColor;
     sf::Color foregroundColor;
     sf::Color buttonColor;
+    sf::Color textColor;
 };
 
 
