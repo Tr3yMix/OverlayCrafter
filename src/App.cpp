@@ -63,6 +63,11 @@ void App::setViewport(const sf::Event::Resized& event) {
     window.setView(*view);
 }
 
+void App::updateButtonPosition() const {
+    constexpr float marginLeft = 20.f;
+    constexpr float marginTop = 50.f;
+    button->setPosition({marginLeft, marginTop});
+}
 
 
 void App::update() {
@@ -103,6 +108,7 @@ void App::handleEvents() {
             }
         }else if(const auto* resized = event->getIf<sf::Event::Resized>()) {
             setViewport(*resized);
+            updateButtonPosition();
         }
 
         button->handleEvent(event, window);

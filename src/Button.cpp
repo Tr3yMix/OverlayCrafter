@@ -60,4 +60,9 @@ void Button::handleEvent(const std::optional<sf::Event>& event, const sf::Render
 
 }
 
+void Button::setPosition(const sf::Vector2f& position) {
+    shape.setPosition(position);
+    label->setPosition(position + this->scale / 2.f);
+}
+
 

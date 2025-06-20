@@ -6,7 +6,6 @@
 #include "SFML/Graphics.hpp"
 #include <iostream>
 
-
 #include "Button.h"
 #include "ColorScheme.h"
 
@@ -45,6 +44,7 @@ private:
 
     void handleEvents();
     void setViewport(const sf::Event::Resized& event);
+    void updateButtonPosition() const;
 
 };
 

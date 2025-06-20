@@ -13,6 +13,7 @@ public:
 
     void draw(sf::RenderWindow& window) const;
     void handleEvent(const std::optional<sf::Event>& event, const sf::RenderWindow& window);
+    void setPosition(const sf::Vector2f& position);
 
 private:
 
