@@ -1,7 +1,8 @@
+#pragma once
 
-#include "color_utils.h"
+#include <SFML/Graphics.hpp>
 
-sf::Color fromHex(const uint32_t hex) {
+inline sf::Color fromHex(const uint32_t hex) {
     //12 bit
     if(hex <= 0xFFF) {
         const uint8_t r = (hex >> 8 & 0xF) * 17;
@@ -30,3 +31,4 @@ sf::Color fromHex(const uint32_t hex) {
     return {r, g, b, a};
 
 }
+
