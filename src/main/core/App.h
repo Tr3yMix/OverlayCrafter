@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Common.h"
 
+#include "platform/windows/DragAndDropHandler.h"
 #include "SFML/Graphics.hpp"
 
 #include "ui/Button.h"
-#include "ui/Toolbar.h"
+#include "ui/MenuBar.h"
 #include "utils/Theme.h"
 
 
@@ -22,9 +22,15 @@ public:
 
 private:
 
+    bool m_draggingWindow = false;
+    POINT m_dragMouseStartPos{};
+    POINT m_dragWindowStartPos{};
+
+    std::unique_ptr<DragAndDropHandler> m_dragHandler;
+
     //Window Properties
     std::string m_title;
-    sf::Vector2<float> m_windowDimensions;
+    sf::Vector2<float> m_initWindowSize;
 
     //Image Texture Properties
     sf::Vector2<float> m_spriteScale;
@@ -33,16 +39,21 @@ private:
     //sf::Color m_backgroundColor;
     Theme m_theme;
 
-    std::unique_ptr<Toolbar> m_toolbar;
+    std::unique_ptr<MenuBar> m_menubar;
+    std::unique_ptr<Button> m_button;
+    float m_menuBarWidth = 120;
 
-    std::unique_ptr<sf::View> m_view;
+    std::unique_ptr<sf::View> m_mainView;
+    std::unique_ptr<sf::View> m_topView;
+    std::unique_ptr<sf::View> m_leftView;
+    std::unique_ptr<sf::View> m_rightView;
     sf::Texture m_imageTexture;
     sf::Font m_font;
     std::unique_ptr<sf::Sprite> m_sprite;
 
     //Functions
     void initWindow();
-    void initView();
+    void initViews();
     void initFont();
     void initToolbar();
     void initSprite();
@@ -50,7 +61,12 @@ private:
     void centerSprite() const;
 
     void handleEvents();
-    void updateViewAspectRatio(const sf::Event::Resized& event);
+    void updateViewportsOnResize(const sf::Event::Resized& event) const;
+
+    static void updateMainView(const sf::Event::Resized& event);
+    void updateTopView() const;
+    void updateLeftView(const sf::Event::Resized& event) const;
+    void updateRightView(const sf::Event::Resized& event) const;
 
 };
 

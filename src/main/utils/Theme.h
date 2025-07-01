@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Common.h"
-
 #include "SFML/Graphics.hpp"
 
 #include "HexColorParser.h"
@@ -9,25 +7,31 @@
 
 #include <utility>
 
+#include "Logger.h"
+
 struct Colors {
     sf::Color background;
     sf::Color foreground;
     sf::Color button;
+    sf::Color highlight;
+    sf::Color critical;
     sf::Color text;
 };
 
 class Theme {
 
 public:
-
+//fromHex(0x323232)
     explicit Theme(const Colors& colors, sf::Font font): m_colors(colors), m_font(std::move(font)) {}
 
     static Theme Dark() {
-        const Colors colors = { fromHex(0x111), fromHex(0x222), fromHex(0x323264), sf::Color::White};
+        const Colors colors = { fromHex(0x111), fromHex(0x222), sf::Color::Transparent,
+            fromHex(0x666), sf::Color::Red, sf::Color::White};
         return Theme(colors, sf::Font());
     }
     static Theme Light() {
-        const Colors colors = {fromHex(0xfff), fromHex(0xccc), fromHex(0xddd), sf::Color::Black};
+        const Colors colors = {fromHex(0xaaa), fromHex(0xddd), sf::Color::Transparent,
+            fromHex(0xeee),sf::Color::Red, fromHex(0x444)};
         return Theme(colors, sf::Font());
     }
 

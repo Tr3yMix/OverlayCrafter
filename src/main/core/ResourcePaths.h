@@ -8,5 +8,7 @@ namespace ResourcePaths {
     static const std::filesystem::path fontPath(resourcePath / "font/");
 
     static const std::filesystem::path imagePath(resourcePath / "image/");
+
+    static const std::filesystem::path modPath(resourcePath / "mods/");
 }
 

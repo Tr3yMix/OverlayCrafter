@@ -18,14 +18,15 @@ set(NFD_SOURCES
         external/nfd/nfd_common.c
         external/nfd/nfd_common.h
         external/nfd/nfd_win.cpp
-        src/main/utils/Logger.h
 )
 
 add_library(nfd STATIC ${NFD_SOURCES})
 target_include_directories(nfd PUBLIC external/nfd/include)
 
-## SFML (via FetchContent)
+## === FetchContent ===
 include(FetchContent)
+
+## SFML (via FetchContent)
 
 FetchContent_Declare(SFML
         GIT_REPOSITORY https://github.com/SFML/SFML.git
@@ -33,17 +34,41 @@ FetchContent_Declare(SFML
         GIT_SHALLOW ON
         EXCLUDE_FROM_ALL
         SYSTEM)
-FetchContent_MakeAvailable(SFML)
+
+## zlib (via FetchContent)
+
+FetchContent_Declare(
+        zlib
+        URL https://zlib.net/zlib-1.3.1.tar.gz
+)
+
+FetchContent_MakeAvailable(zlib)
+
+## minizip-ng (via FetchContent)
+
+
+
+FetchContent_Declare(
+        minizip
+        GIT_REPOSITORY https://github.com/zlib-ng/minizip-ng.git
+        GIT_TAG 4.0.10
+)
+
+set(MZ_INSTALL OFF CACHE BOOL "" FORCE)
+set(MZ_FETCH_LIBS OFF CACHE BOOL "" FORCE)
+
+#Make FetchContent Available
+
+FetchContent_MakeAvailable(SFML minizip)
 
 # === Source Files ===
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS src/main/*.cpp src/main/*.h)
 
 # === Executable ===
-add_executable(OverlayCrafter ${SRC_FILES}
-        src/main/Common.h)
+add_executable(OverlayCrafter ${SRC_FILES})
 
 # === Dependencies ===
-target_link_libraries(OverlayCrafter PRIVATE SFML::System SFML::Window SFML::Graphics nfd)
+target_link_libraries(OverlayCrafter PRIVATE SFML::System SFML::Window SFML::Graphics nfd minizip)
 
 # === Include Directories ===
 target_include_directories(OverlayCrafter PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/main)

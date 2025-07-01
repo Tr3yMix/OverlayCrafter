@@ -8,7 +8,7 @@ class WhiteTexture : public sf::Texture{
 public:
     WhiteTexture() {
         if(const sf::Image image({16, 16}, sf::Color::White); !this->loadFromImage(image)) {
-            Logger::log(Logger::LogType::Error, "Failed to load white texture");
+            log(Logger::LogType::Error, "Failed to load white texture");
         }
     }
 
