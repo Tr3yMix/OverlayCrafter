@@ -46,8 +46,6 @@ FetchContent_MakeAvailable(zlib)
 
 ## minizip-ng (via FetchContent)
 
-
-
 FetchContent_Declare(
         minizip
         GIT_REPOSITORY https://github.com/zlib-ng/minizip-ng.git

@@ -19,6 +19,7 @@ public:
     void handleEvent(const std::optional<sf::Event>& event, const sf::RenderWindow& window, const sf::View &view);
     void setPosition(const sf::Vector2f& position);
     void setSize(const sf::Vector2f& scale);
+    sf::FloatRect getBounds() const;
 
 
     sf::Vector2f getScale() const;

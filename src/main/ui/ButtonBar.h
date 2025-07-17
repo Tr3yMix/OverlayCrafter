@@ -8,15 +8,17 @@
 
 enum class MenuType {Horizontal, Vertical, DropDown};
 
-class MenuBar {
+class ButtonBar {
 
 public:
-    MenuBar(MenuType type,const sf::Vector2u& size, Colors colors ,sf::Font font);
+    ButtonBar(MenuType type,const sf::Vector2u& size, Colors colors ,sf::Font font);
 
     void addButton(const std::string& text, const std::function<void()>& onClick);
     void draw(sf::RenderWindow& window, const sf::View& topView, const sf::View& leftView) const;
     void handleButtonEvents(const std::optional<sf::Event>& event, const sf::RenderWindow& window, const sf::View& view);
-    //void resize(const sf::Vector2u& size);
+    bool isMouseOverElement(const sf::Vector2f& mouse) const;
+    void resize(const sf::Vector2u& size);
+    float getButtonsWidth() const;
 
 private:
 
@@ -28,6 +30,6 @@ private:
     sf::Font m_font;
 
     float m_buttonWidth = 50.f;
-    float m_buttonHeight = 35.f;
+    float m_buttonHeight = 40.f;
     float m_padding = 1.f;
 };

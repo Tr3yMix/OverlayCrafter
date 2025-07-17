@@ -51,6 +51,8 @@ bool Button::isHovering(const sf::RenderWindow& window, const sf::View& view) co
 }
 
 
+
+
 void Button::handleEvent(const std::optional<sf::Event>& event, const sf::RenderWindow& window, const sf::View& view) {
 
     if(isHovering(window, view)) {
@@ -89,6 +91,10 @@ void Button::setSize(const sf::Vector2f &scale) {
 
     const sf::FloatRect bounds = m_label->getLocalBounds();
     m_label->setOrigin({bounds.position.x + bounds.size.x / 2.f, bounds.position.y + bounds.size.y / 2.f});
+}
+
+sf::FloatRect Button::getBounds() const {
+    return m_shape.getGlobalBounds();
 }
 
 sf::Vector2f Button::getScale() const {

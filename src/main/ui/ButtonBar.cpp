@@ -1,11 +1,11 @@
-#include "MenuBar.h"
+#include "ButtonBar.h"
 
 #include <utility>
 
 #include "utils/Theme.h"
 
 
-MenuBar::MenuBar(const MenuType type, const sf::Vector2u& size, const Colors colors, sf::Font font):
+ButtonBar::ButtonBar(const MenuType type, const sf::Vector2u& size, const Colors colors, sf::Font font):
 m_type(type), m_size(size), m_colors(colors), m_font(std::move(font)) {
 
     m_background.setSize(sf::Vector2f(m_size));
@@ -14,7 +14,7 @@ m_type(type), m_size(size), m_colors(colors), m_font(std::move(font)) {
 
 }
 
-void MenuBar::addButton(const std::string &text, const std::function<void()>& onClick) {
+void ButtonBar::addButton(const std::string &text, const std::function<void()>& onClick) {
 
     sf::Vector2f position;
 
@@ -57,7 +57,7 @@ void MenuBar::addButton(const std::string &text, const std::function<void()>& on
 
 }
 
-void MenuBar::draw(sf::RenderWindow& window, const sf::View& topView, const sf::View& leftView) const {
+void ButtonBar::draw(sf::RenderWindow& window, const sf::View& topView, const sf::View& leftView) const {
 
     window.setView(topView);
 
@@ -68,9 +68,31 @@ void MenuBar::draw(sf::RenderWindow& window, const sf::View& topView, const sf::
 
 }
 
-void MenuBar::handleButtonEvents(const std::optional<sf::Event> &event, const sf::RenderWindow &window, const sf::View& view) {
+void ButtonBar::handleButtonEvents(const std::optional<sf::Event>& event, const sf::RenderWindow& window, const sf::View& view) {
     for(const auto& button : m_buttons) button->handleEvent(event, window, view);
 }
+
+bool ButtonBar::isMouseOverElement(const sf::Vector2f &mouse) const {
+    for(const auto& button : m_buttons) {
+        if(button->getBounds().contains(mouse)) return true;
+    }
+    return false;
+}
+
+void ButtonBar::resize(const sf::Vector2u &size) {
+    m_background.setSize(sf::Vector2f(size));
+}
+
+float ButtonBar::getButtonsWidth() const {
+    float width = 0;
+    for(const auto& button : m_buttons) {
+        width += button->getScale().x + m_padding;
+    }
+    return width;
+}
+
+
+
 
 
 

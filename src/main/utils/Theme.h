@@ -21,11 +21,10 @@ struct Colors {
 class Theme {
 
 public:
-//fromHex(0x323232)
     explicit Theme(const Colors& colors, sf::Font font): m_colors(colors), m_font(std::move(font)) {}
 
     static Theme Dark() {
-        const Colors colors = { fromHex(0x111), fromHex(0x222), sf::Color::Transparent,
+        const Colors colors = { fromHex(0x111), fromHex(0x222), fromHex(0x222),
             fromHex(0x666), sf::Color::Red, sf::Color::White};
         return Theme(colors, sf::Font());
     }
