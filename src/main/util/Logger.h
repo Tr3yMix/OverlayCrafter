@@ -69,6 +69,15 @@ namespace Logger {
     template <Streamable... Args>
     void debug(Args&&... args){log(LogType::Debug, std::forward<Args>(args)...);}
 
+    template <Streamable... Args>
+    void error(Args&&... args){log(LogType::Error, std::forward<Args>(args)...);}
+
+    template <Streamable... Args>
+    void warn(Args&&... args){log(LogType::Warn, std::forward<Args>(args)...);}
+
+    template <Streamable... Args>
+    void info(Args&&... args){log(LogType::Info, std::forward<Args>(args)...);}
+
     template <typename... Args>
     void logf(const LogType type, const std::string_view fmt, Args&&... args) {
         // ReSharper disable once CppLocalVariableMayBeConst
@@ -82,6 +91,21 @@ namespace Logger {
     template <typename... Args>
     void debugf(std::string_view fmt, Args&&... args) {
         logf(LogType::Debug, fmt, std::forward<Args>(args)...);
+    }
+
+    template <typename... Args>
+    void errorf(std::string_view fmt, Args&&... args) {
+        logf(LogType::Error, fmt, std::forward<Args>(args)...);
+    }
+
+    template <typename... Args>
+    void warnf(std::string_view fmt, Args&&... args) {
+        logf(LogType::Warn, fmt, std::forward<Args>(args)...);
+    }
+
+    template <typename... Args>
+    void infof(std::string_view fmt, Args&&... args) {
+        logf(LogType::Info, fmt, std::forward<Args>(args)...);
     }
 
 }

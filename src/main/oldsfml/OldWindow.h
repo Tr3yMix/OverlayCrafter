@@ -4,9 +4,9 @@
 #include "SFML/Graphics/RenderWindow.hpp"
 #include <windows.h>
 
-#include "core/FileDropHandler.h"
-#include "core/AppUI.h"
-#include "utils/Theme.h"
+#include "FileDropHandler.h"
+#include "AppUI.h"
+#include "Theme.h"
 
 enum class ResizeDirection { None, Horizontal, Vertical, Diagonal };
 

@@ -1,50 +1,26 @@
-#include "core/App.h"
+
 #include "core/AppWindow.h"
-
-
+#include "ui/AppUI.h"
+#include "util/Logger.h"
 
 // ReSharper disable once CppParameterMayBeConst
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
-    AppWindow window;
 
-    window.m_hInstance = hInstance;
+    Logger::init();
 
-    window.createWindow(800, 600, reinterpret_cast<LPCSTR>("My OpenGL Window"));
-    window.createOpenGLContext();
-    ShowWindow(window.m_hwnd, SW_SHOW);
+    AppWindow window({800, 600}, "OverlayCrafter", hInstance);
 
-    window.messageLoop();
+    const ui::AppUI ui(&window);
+
+    while (window.m_isRunning) {
+        ui.draw();
+        window.update();
+    }
     window.cleanup();
 
     return 0;
 
 
 }
-
-
-
-/*
-
-int main() {
-
-    Logger::init();
-
-    std::string version = "0.1a";
-
-    logf(Logger::LogType::Info, "Starting OverlayCrafter {}", version);
-
-    const App overlayCrafter(
-        "OverlayCrafter",
-        {1440, 810},
-        Theme::Dark()
-        );
-
-
-
-    while(overlayCrafter.m_window->getWindow()->isOpen()) {
-        overlayCrafter.update();
-    }
-}
-*/
 
 

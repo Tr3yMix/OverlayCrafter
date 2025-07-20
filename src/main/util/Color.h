@@ -12,13 +12,18 @@ namespace util {
 
         explicit Color(std::uint32_t hex);
 
-        int r() const;
-        int g() const;
-        int b() const;
-        int a() const;
+        [[nodiscard]] std::uint8_t r() const {return m_r;}
+        [[nodiscard]] std::uint8_t g() const {return m_g;}
+        [[nodiscard]] std::uint8_t b() const {return m_b;}
+        [[nodiscard]] std::uint8_t a() const {return m_a;}
+
+        [[nodiscard]] float rF() const {return static_cast<float>(m_r) / 255.f;}
+        [[nodiscard]] float gF() const {return static_cast<float>(m_g) / 255.f;}
+        [[nodiscard]] float bF() const {return static_cast<float>(m_b) / 255.f;}
+        [[nodiscard]] float aF() const {return static_cast<float>(m_a) / 255.f;}
 
     private:
-        int m_r, m_g, m_b, m_a;
+        std::uint8_t m_r, m_g, m_b, m_a;
 
         static std::uint8_t parseR(const std::uint32_t hex) {
             return hex <= 0xFFF ? (hex >> 8 & 0xF) * 17 :

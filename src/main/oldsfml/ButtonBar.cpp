@@ -2,7 +2,7 @@
 
 #include <utility>
 
-#include "utils/Theme.h"
+#include "Theme.h"
 
 
 ButtonBar::ButtonBar(const MenuType type, const sf::Vector2u& size, const Colors colors, sf::Font font):
@@ -26,7 +26,7 @@ void ButtonBar::addButton(const std::string &text, const std::function<void()>& 
 
         sf::Vector2f scale(m_buttonWidth, m_buttonHeight);
 
-        m_buttons.emplace_back(std::make_unique<Button>(ButtonType::Normal, position, scale, m_font, text, m_colors, onClick));
+        m_buttons.emplace_back(std::make_unique<OldButton>(ButtonType::Normal, position, scale, m_font, text, m_colors, onClick));
     }
     else {
         sf::Text label(m_font, text, sf::Text::Regular);
@@ -51,7 +51,7 @@ void ButtonBar::addButton(const std::string &text, const std::function<void()>& 
         position.x = x;
         position.y = 0;
 
-        m_buttons.emplace_back(std::make_unique<Button>(ButtonType::Normal, position, scale, label, m_colors, onClick));
+        m_buttons.emplace_back(std::make_unique<OldButton>(ButtonType::Normal, position, scale, label, m_colors, onClick));
     }
 
 

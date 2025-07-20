@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Button.h"
+#include "OldButton.h"
 #include "SFML/Graphics/Font.hpp"
 #include "SFML/Graphics/RectangleShape.hpp"
 #include "SFML/System/Vector2.hpp"
-#include "utils/Theme.h"
+#include "Theme.h"
 
 enum class MenuType {Horizontal, Vertical, DropDown};
 
@@ -26,7 +26,7 @@ private:
     sf::Vector2u m_size;
     Colors m_colors;
     sf::RectangleShape m_background;
-    std::vector<std::unique_ptr<Button>> m_buttons;
+    std::vector<std::unique_ptr<OldButton>> m_buttons;
     sf::Font m_font;
 
     float m_buttonWidth = 50.f;

@@ -1,6 +1,8 @@
 #pragma once
+
 #include "Drawable.h"
-#include "SFML/Graphics/Color.hpp"
+#include "math/Vector2.h"
+#include "util/Color.h"
 
 
 namespace ui {
@@ -8,14 +10,17 @@ namespace ui {
 
     public:
 
-        RectanglePrimitive(float x, float y, float width, float height);
+        RectanglePrimitive(math::Vector2f position, float width, float height);
 
-        void setColor(float r, float g, float b, float a);
+        void setColor(const util::Color& color);
 
-        void draw() const override;
+        void draw(const DrawTarget& target) const override;
+
 
     private:
-        float m_x, m_y, m_width, m_height;
+
+        math::Vector2f m_position;
+        float m_width, m_height;
         float m_r = 1.0f, m_g = 1.0f, m_b = 1.0f, m_a = 1.0f;
 
     };

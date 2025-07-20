@@ -1,40 +1,64 @@
 #pragma once
 
-#include <GL/gl.h>
 #include <windows.h>
 
+#include "math/Vector2.h"
 #include "ui/Drawable.h"
-#include "utils/Color.h"
+#include "ui/DrawTarget.h"
+#include "util/Color.h"
 
 
-class AppWindow {
+struct WindowMessage {
+    HWND hwnd;
+    UINT msg;
+    WPARAM wParam;
+    LPARAM lParam;
+
+    // ReSharper disable once CppParameterMayBeConst
+    WindowMessage(HWND hwnd, const UINT msg, const WPARAM wParam, const LPARAM lParam) : hwnd(hwnd), msg(msg), wParam(wParam), lParam(lParam) {}
+};
+
+class AppWindow final : public ui::DrawTarget{
 
 public:
 
-    void createWindow(int width, int height, LPCSTR title);
-    void createOpenGLContext();
-    void messageLoop() const;
+    AppWindow(math::Vector2u windowSize, LPCSTR title, HINSTANCE hInstance);
+
+
+
+    bool m_isRunning;
+
+    void update() const;
     void cleanup() const;
+
+    static void clear(util::Color color);
+
+    void draw(ui::Drawable& drawable) const override;
 
     HINSTANCE m_hInstance;
     HWND m_hwnd;
+    HDC m_hdc;
 
 private:
 
+    void createWindow(LPCSTR title);
+    void createOpenGLContext();
 
-    HDC m_hdc;
+    static void processMessages();
+
+    void resizeWindowEvent(const WindowMessage& message);
+    static void leftButtonDownEvent(const WindowMessage& message);
+    void windowCloseEvent(const WindowMessage& message);
+
+
     HGLRC m_hglrc;
-    bool running = true;
 
 
     static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
-    LRESULT handleMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+    LRESULT handleMessages(const WindowMessage &message) noexcept;
 
 
-    void draw(const ui::Drawable& drawable) const;
-
-    static void clear(util::Color color);
     void display() const;
 
 

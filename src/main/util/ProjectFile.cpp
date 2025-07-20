@@ -19,7 +19,7 @@ void ProjectFile::save(const sf::Texture &texture) {
 
     const sf::Image image = texture.copyToImage();
 
-    const auto dataOpt = image.saveToMemory("png");
+    const std::optional<std::vector<std::uint8_t>> dataOpt = image.saveToMemory("png");
 
     if(!dataOpt) {
         log(Logger::LogType::Error, "Failed to save image to memory.");

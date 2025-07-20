@@ -1,8 +1,8 @@
 #include "AppUI.h"
 #include "OldWindow.h"
-#include "utils/FileDialog.h"
-#include "utils/JarReader.h"
-#include "utils/ProjectFile.h"
+#include "util/FileDialog.h"
+#include "util/JarReader.h"
+#include "util/ProjectFile.h"
 
 
 AppUI::AppUI(OldWindow& window, const sf::Vector2f& spriteScale, Theme theme): m_texture(whiteTexture()), m_window(window), m_theme(std::move(theme)) {
@@ -37,15 +37,15 @@ AppUI::AppUI(OldWindow& window, const sf::Vector2f& spriteScale, Theme theme): m
 
 
 
-    m_minButton = std::make_unique<Button>(ButtonType::Normal,
+    m_minButton = std::make_unique<OldButton>(ButtonType::Normal,
         sf::Vector2f(0, 0),\
         sf::Vector2f(40, 40), m_font, "Min", m_theme.getColors(), [this]{m_window.minimizeWindow();});
 
-    m_maxButton = std::make_unique<Button>(ButtonType::Normal,
+    m_maxButton = std::make_unique<OldButton>(ButtonType::Normal,
         sf::Vector2f(40.f, 0),\
         sf::Vector2f(40, 40), m_font, "Max", m_theme.getColors(), [this]{m_window.maximizeWindow();});
 
-    m_exitButton = std::make_unique<Button>(ButtonType::Critical,
+    m_exitButton = std::make_unique<OldButton>(ButtonType::Critical,
         sf::Vector2f(80.f, 0),\
         sf::Vector2f(40, 40), m_font, "Exit", m_theme.getColors(), [this]{m_window.getWindow()->close();});
 

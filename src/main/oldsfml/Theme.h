@@ -3,11 +3,11 @@
 #include "SFML/Graphics.hpp"
 
 #include "HexColorParser.h"
-#include "core/ResourcePaths.h"
+#include "ResourcePaths.h"
 
 #include <utility>
 
-#include "Logger.h"
+#include "../util/Logger.h"
 
 struct Colors {
     sf::Color background;

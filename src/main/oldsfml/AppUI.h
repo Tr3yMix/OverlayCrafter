@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ui/ButtonBar.h"
-#include "utils/TextureMaker.h"
+#include "ButtonBar.h"
+#include "TextureMaker.h"
 
 class OldWindow;
 
@@ -11,9 +11,9 @@ public:
 
 
     std::unique_ptr<ButtonBar> m_menuBar;
-    std::unique_ptr<Button> m_exitButton;
-    std::unique_ptr<Button> m_maxButton;
-    std::unique_ptr<Button> m_minButton;
+    std::unique_ptr<OldButton> m_exitButton;
+    std::unique_ptr<OldButton> m_maxButton;
+    std::unique_ptr<OldButton> m_minButton;
     std::unique_ptr<sf::Sprite> m_sprite;
     sf::Texture m_texture;
 
