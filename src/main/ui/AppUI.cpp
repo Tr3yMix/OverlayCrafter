@@ -7,7 +7,7 @@ namespace ui {
 
     AppUI::AppUI(AppWindow* window): m_window(window) {
 
-        Text::InitFont(m_window->m_hdc);
+        Text::InitFont(m_window->getDC());
 
         m_text = std::make_unique<Text>("Hello World!", math::Vector2f(.5, .5), util::Color(0xfff));
 
@@ -26,11 +26,24 @@ namespace ui {
 
     void AppUI::draw() const {
         
-        m_window->clear(util::Color(0x222));
+        clear(util::Color(0x222));
 
         m_window->draw(*m_topBar);
         m_window->draw(*m_exitButton);
         m_window->draw(*m_text);
     }
+
+    void AppUI::clear(const util::Color color) {
+
+        const GLclampf r = color.rF();
+        const GLclampf g = color.gF();
+        const GLclampf b = color.bF();
+        const GLclampf a = color.aF();
+
+        glClearColor(r, g, b, a);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+    }
+
     
 } // ui

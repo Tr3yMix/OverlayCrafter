@@ -13,6 +13,8 @@ namespace ui {
 
         void draw() const;
 
+        static void clear(util::Color color);
+
     private:
         AppWindow* m_window;
 

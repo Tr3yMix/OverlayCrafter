@@ -3,6 +3,7 @@
 #include "ui/AppUI.h"
 #include "util/Logger.h"
 
+
 // ReSharper disable once CppParameterMayBeConst
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
 
@@ -12,11 +13,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
 
     const ui::AppUI ui(&window);
 
-    while (window.m_isRunning) {
-        ui.draw();
+    while (window.isRunning()) {
         window.update();
+        ui.draw();
     }
-    window.cleanup();
 
     return 0;
 

@@ -12,7 +12,7 @@
 
 namespace ui {
 
-    class Text : public Drawable{
+    class Text final : public Drawable{
 
     public:
         Text(const std::string& text, math::Vector2f position, const util::Color& color = util::Color(0xfff));

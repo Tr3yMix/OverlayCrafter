@@ -62,8 +62,7 @@ void FileDialog::openTexture(sf::Texture& texture) {
     const auto filterList = "png,jpg,jpeg,bmp";
 
     if(const nfdresult_t result = NFD_OpenDialog(filterList, nullptr, &outPath); result == NFD_OKAY) {
-
-        std::unique_ptr<nfdchar_t, decltype(&free)> outPathGuard(outPath, free);
+        [[maybe_unused]] std::unique_ptr<nfdchar_t, decltype(&free)> outPathGuard(outPath, free);
         sf::Image image;
         if(!image.loadFromFile(outPath)) {
             log(LogType::Error, "Failed to load image from: ", outPath);
